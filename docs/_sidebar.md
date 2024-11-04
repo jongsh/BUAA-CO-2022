@@ -11,5 +11,3 @@
 - [Project-7](p7)
 
 - [Project-8](p8)
-
-  
