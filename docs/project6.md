@@ -514,109 +514,124 @@ m_inst_addr 连接 M_PC；m_data_byteen 连接新增模块 DM_CU 的输出（M_b
 **lw 指令**：
 
 功能描述：GPR[rt] <= memory[GPR[rs]+offset]
-  |op|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
-  |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-  |100011|1|0|001|0001|0000|00000|00|000|0000|0000|0000|001|0|0|4'd1|4'd7|4'd3|
+
+|op|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|100011|1|0|001|0001|0000|00000|00|000|0000|0000|0000|001|0|0|4'd1|4'd7|4'd3|
 
 
 **sw 指令**：
 
 功能描述：memory[GPR[rs]+offset] <- GPR[rt]
-  |op|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
-  |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-  |101011|0|1|XXX|XXXX|0000|00000|00|000|0000|0000|XXXX|001|0|0|4'd1|4'd2|4'd0|
+
+|op|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|101011|0|1|XXX|XXXX|0000|00000|00|000|0000|0000|XXXX|001|0|0|4'd1|4'd2|4'd0|
 
 
 **mult 指令**：
 
 功能描述：(HI, LO) <- GPR[rs]×GPR[rt]
-  |op|func|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
-  |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-  |000000|011000|0|0|000|0000|XXXX|00000|00|000|0001|0000|XXXX|000|0|1|4'd1|4'd1|4'd0|
+
+|op|func|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|000000|011000|0|0|000|0000|XXXX|00000|00|000|0001|0000|XXXX|000|0|1|4'd1|4'd1|4'd0|
 
 
 **div 指令**：
 
 功能描述：(HI, LO) <- GPR[rs] / GPR[rt]
-  |op|func|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
-  |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-  |000000|011010|0|0|000|0000|XXXX|00000|00|000|0011|0000|XXXX|000|0|1|4'd1|4'd1|4'd0|
+
+|op|func|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|000000|011010|0|0|000|0000|XXXX|00000|00|000|0011|0000|XXXX|000|0|1|4'd1|4'd1|4'd0|
 
 **multu 指令**：
 
 功能描述：(HI, LO) <- GPR[rs]×GPR[rt]
-  |op|func|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
-  |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-  |000000|011001|0|0|000|0000|XXXX|00000|00|000|0010|0000|XXXX|000|0|1|4'd1|4'd1|4'd0|
+
+|op|func|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|000000|011001|0|0|000|0000|XXXX|00000|00|000|0010|0000|XXXX|000|0|1|4'd1|4'd1|4'd0|
 
 **divu 指令**：
 
 功能描述：(HI, LO) <- GPR[rs] / GPR[rt]
-  |op|func|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
-  |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-  |000000|011011|0|0|000|0000|XXXX|00000|00|000|0100|0000|XXXX|000|0|1|4'd1|4'd1|4'd0|
+
+|op|func|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|000000|011011|0|0|000|0000|XXXX|00000|00|000|0100|0000|XXXX|000|0|1|4'd1|4'd1|4'd0|
 
 **mfhi 指令**：
 
 功能描述：GPR[rd] <- HI
-  |op|func|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
-  |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-  |000000|010000|1|0|000|0100|XXXX|00000|00|000|0000|0000|XXXX|000|0|0|4'd7|4'd7|4'd2|
+
+|op|func|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|000000|010000|1|0|000|0100|XXXX|00000|00|000|0000|0000|XXXX|000|0|0|4'd7|4'd7|4'd2|
 
 **mflo 指令**：
 
 功能描述：GPR[rd] <- LO
-  |op|func|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
-  |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-  |000000|010010|1|0|000|0100|XXXX|00000|00|000|0000|0000|XXXX|000|1|0|4'd7|4'd7|4'd2|
+
+|op|func|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|000000|010010|1|0|000|0100|XXXX|00000|00|000|0000|0000|XXXX|000|1|0|4'd7|4'd7|4'd2|
 
 **mthi 指令**：
 
 功能描述：HI <- GPR[rs]
-  |op|func|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
-  |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-  |000000|010001|0|0|000|0000|XXXX|00000|00|000|0101|0000|XXXX|000|0|1|4'd1|4'd7|4'd0|
+
+|op|func|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|000000|010001|0|0|000|0000|XXXX|00000|00|000|0101|0000|XXXX|000|0|1|4'd1|4'd7|4'd0|
 
 **mtlo 指令**：
 
 功能描述：LO <- GPR[rs]
-  |op|func|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
-  |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-  |000000|010011|0|0|000|0000|XXXX|00000|00|000|0110|0000|XXXX|000|0|1|4'd1|4'd7|4'd0|
+
+|op|func|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|000000|010011|0|0|000|0000|XXXX|00000|00|000|0110|0000|XXXX|000|0|1|4'd1|4'd7|4'd0|
 
 **and 指令**：
 
 功能描述：GPR[rd] <- GPR[rs] and GPR[rt]
-  |op|func|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
-  |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-  |000000|100100|1|0|000|0000|XXXX|00011|00|000|0000|0000|XXXX|000|0|0|4'd1|4'd1|4'd2|
+
+|op|func|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|000000|100100|1|0|000|0000|XXXX|00011|00|000|0000|0000|XXXX|000|0|0|4'd1|4'd1|4'd2|
 
 **or 指令**：
 
 功能描述：GPR[rd] <- GPR[rs] or GPR[rt]
-  |op|func|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
-  |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-  |000000|100101|1|0|000|0000|XXXX|00010|00|000|0000|0000|XXXX|000|0|0|4'd1|4'd1|4'd2|
+
+|op|func|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|000000|100101|1|0|000|0000|XXXX|00010|00|000|0000|0000|XXXX|000|0|0|4'd1|4'd1|4'd2|
 
 **slt 指令**：
 
 功能描述：GPR[rd] <- (GPR[rs] < GPR[rt])
-  |op|func|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
-  |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-  |000000|101010|1|0|000|0000|XXXX|00111|00|000|0000|0000|0000|000|0|0|4'd1|4'd1|4'd2|
+
+|op|func|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|000000|101010|1|0|000|0000|XXXX|00111|00|000|0000|0000|0000|000|0|0|4'd1|4'd1|4'd2|
 
 **sltu 指令**：
 
 功能描述：GPR[rd] <- (0||GPR[rs]< 0||GPR[rt])
-  |op|func|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
-  |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-  |000000|101011|1|0|000|0000|XXXX|01001|00|000|0000|0000|0000|000|0|0|4'd1|4'd1|4'd2|
+
+|op|func|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|000000|101011|1|0|000|0000|XXXX|01001|00|000|0000|0000|0000|000|0|0|4'd1|4'd1|4'd2|
 
 
 **addi 指令**：
 
 功能描述: GPR[rt] <- GPR[rs] + signed_extend(immediate)
-  |op|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
+
+|op|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |001000|1|0|001|0000|0000|00000|00|000|0000|0000|0000|001|0|0|4'd1|4'd7|4'd2|
 
@@ -624,7 +639,8 @@ m_inst_addr 连接 M_PC；m_data_byteen 连接新增模块 DM_CU 的输出（M_b
 **andi 指令**：
 
 功能描述: GPR[rt] <- GPR[rs] AND zero_extend(immediate)
-  |op|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
+
+|op|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 |001100|1|0|001|0000|0001|00011|00|000|0000|0000|0000|001|0|0|4'd1|4'd7|4'd2|
 
@@ -632,9 +648,10 @@ m_inst_addr 连接 M_PC；m_data_byteen 连接新增模块 DM_CU 的输出（M_b
 **bne 指令**：
 
 功能描述：if (GPR[rs] != GPR[rt]) PC <- PC + 4 + sign_extend(offset||00) else PC <- PC + 4
-  |op|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
-  |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-  |000101|0|0|XXX|XXXX|XXXX|XXXXX|00|000|0000|0001|0101|XXX|0|0|4'd0|4'd0|4'd0|
+
+|op|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|000101|0|0|XXX|XXXX|XXXX|XXXXX|00|000|0000|0001|0101|XXX|0|0|4'd0|4'd0|4'd0|
 
 **sh 指令**：
 
@@ -648,9 +665,10 @@ m_inst_addr 连接 M_PC；m_data_byteen 连接新增模块 DM_CU 的输出（M_b
 **sb 指令**：
 
 功能描述：memory[Addr]7+8byte..8byte <- GPR[rt]7:0
-  |op|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
-  |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-  |101000|0|1|XXX|XXXX|0000|00000|10|000|0000|000|XXXX|001|0|0|4'd1|4'd2|4'd0|
+
+|op|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|101000|0|1|XXX|XXXX|0000|00000|10|000|0000|000|XXXX|001|0|0|4'd1|4'd2|4'd0|
 
 **lh 指令**：
 
