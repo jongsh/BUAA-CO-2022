@@ -470,40 +470,45 @@ m_inst_addr 连接 M_PC；m_data_byteen 连接新增模块 DM_CU 的输出（M_b
 **jal 指令**：
 
 功能描述：PC <- (PC[31:28] || instr_immediate || 00); GPR[31] <- PC + 4
-  |op|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
-  |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-  |000011|1|0|010|0010|XXXX|XXXXX|00|000|0000|0010|XXXX|000|0|0|4'd7|4'd7|4'd1|
+
+|op|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|000011|1|0|010|0010|XXXX|XXXXX|00|000|0000|0010|XXXX|000|0|0|4'd7|4'd7|4'd1|
 
 **jr 指令**：
 
 功能描述：PC <- GPR[rs]
-  |op|func|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
-  |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-  |000000|001000|0|0|XXX|XXXX|XXXX|XXXXX|00|000|0000|0011|XXXX|000|0|0|4'd0|4'd7|4'd0|
+
+|op|func|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|000000|001000|0|0|XXX|XXXX|XXXX|XXXXX|00|000|0000|0011|XXXX|000|0|0|4'd0|4'd7|4'd0|
 
 
 **add 指令**：
 
 功能描述：GPR[rd] <- GPR[rs]+GPR[rt]
-  |op|func|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
-  |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-  |000000|100000|1|0|000|0000|XXXX|00000|00|000|0000|0000|XXXX|000|0|0|4'd1|4'd1|4'd2|
+
+|op|func|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|000000|100000|1|0|000|0000|XXXX|00000|00|000|0000|0000|XXXX|000|0|0|4'd1|4'd1|4'd2|
 
 
 **sub 指令**：
 
 功能描述 GPR[rd] <- GPR[rs] - GPR[rt]
-  |op|func|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
-  |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-  |000000|100010|1|0|000|0000|XXXX|00001|00|000|0000|0000|XXXX|000|0|0|4'd1|4'd1|4'd2|
+
+|op|func|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|000000|100010|1|0|000|0000|XXXX|00001|00|000|0000|0000|XXXX|000|0|0|4'd1|4'd1|4'd2|
 
 
 **beq 指令**：
 
 功能描述：if (GPR[rs] == GPR[rt]) PC <- PC + 4 + sign_extend(offset||00) else PC <- PC + 4
-  |op|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
-  |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-  |000100|0|0|XXX|XXXX|XXXX|XXXXX|00|000|0000|0001|0000|XXX|0|0|4'd0|4'd0|4'd0|
+
+|op|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+|000100|0|0|XXX|XXXX|XXXX|XXXXX|00|000|0000|0001|0000|XXX|0|0|4'd0|4'd0|4'd0|
 
 
 **lw 指令**：
