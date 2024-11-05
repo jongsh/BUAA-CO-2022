@@ -29,4 +29,4 @@
 └─test         # CPU 测试样例
 ```
 
-各 Project 的设计文档在目录 `docs/` 下，在线阅读地址：https://jongsh.github.io/BUAA-CO/。由于这份设计文档也是为了应付课程要求，所以有凑字数的嫌疑，各 Project 的文档内容会有不同程度的重合，请见谅。
+各 Project 的设计文档在目录 `docs/` 下，在线阅读地址：https://jongsh.github.io/BUAA-CO/ 。由于这份设计文档也是为了应付课程要求，所以有凑字数的嫌疑，各 Project 的文档内容会有不同程度的重合，请见谅。
