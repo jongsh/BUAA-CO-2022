@@ -73,6 +73,7 @@ J 型指令又细分两种：
 |---|---|---|
 |i_inst_addr|input[31:0]|F级指令所在的地址|
 |i_inst_rdata| output[31:0] |F级32位指令机器码，为 IM[F_PC[13:2]]|
+
 在 P6 实验中 IM 已经外置。
 
 i_inst_addr 连接 F_PC；i_inst_rdata[31:0] 连接 F_instr。
@@ -111,7 +112,7 @@ i_inst_addr 连接 F_PC；i_inst_rdata[31:0] 连接 F_instr。
 |D_CMPop|input[3:0]|CMP模块功能选择控制信号:**0000：A=?=B; 0001；A<?B有符号; 0010: A>?B有符号;  0011：A<?B无符号; 0100: A>?B无符号; 0101：A!=B？**|
 |D_CMP_result|output[31:0]|比较结果|
 
-为了提高 CPU 吞吐率，将比较功能从 ALU 中分离出来，这是**为了实现在 D级就能够判断下一条指令地址**而做的改变。
+为了提高 CPU 吞吐率，将比较功能从 ALU 中分离出来，这是**为了实现在 D 级就能够判断下一条指令地址**而做的改变。
 
 **GRF**：寄存器文件，存储寄存器数据。
 
@@ -167,14 +168,14 @@ i_inst_addr 连接 F_PC；i_inst_rdata[31:0] 连接 F_instr。
 |D_DM_write|output|D 级指令产生的 DM 写信号，将流水至下一级|
 |D_GRF_DatatoReg|output[3:0]|D 级指令写入寄存器的数据选择信号：**0000：ALUout;  0001：DMout; 0010：PC+8; 0011：写入CMPresult; 0100：MDUout**|
 |D_GRF_A3_sel|output[2:0]|D 级指令目的寄存器选择控制信号：**000：rd；001：rt；010：31号寄存器**|
-|D_ALU_Bsel|output[2:0]|D 级指令产生的 ALU B端口数据选择信号：**000：RD2 001：扩展后的32位立即数**|
+|D_ALU_Bsel|output[2:0]|D 级指令产生的 ALU B端口数据选择信号：**000：RD2；001：扩展后的32位立即数**|
 |D_rs_Tuse|output[3:0]|D 级指令rs段对应的寄存器使用所需时间|
 |D_rt_Tuse|output[3:0]|D 级指令rt段对应的寄存器使用所需时间|
 |D_Tnew|output[3:0]|D 级指令产生写入寄存器的数据所需时间|
 |D_DMop|output[1:0]|D 级指令产生的 DM 控制信号：**W(00)、H(01)、B(10)**|
 |D_BEop|output[2:0]|D 级指令产生的 BE 控制信号：**000：无扩展；001：无符号字节数据扩展；010：符号字节数据扩展；011：无符号半字数据扩展；100：符号半字数据扩展**|
 |D_MDU_start|output|D 级指令的 MDU 开始工作信号|
-|D_MDUop|output[3:0]|D 级指令的 MDU 功能选择信号：**0000：无操作；0001：符号乘 A*B；0010：无符号乘 A*B；0011：符号除 A/B； 0100：无符号除 A/B；0101：写 HI 寄存器；0110：写 LO 寄存器**|
+|D_MDUop|output[3:0]|D 级指令的 MDU 功能选择信号：**0000：无操作；0001：符号乘 A\*B；0010：无符号乘 A\*B；0011：符号除 A/B； 0100：无符号除 A/B；0101：写 HI 寄存器；0110：写 LO 寄存器**|
 |D_MDUout_sel|output|D 级指令 MDU 输出结果选择信号：**0：HI 寄存器；1：LO 寄存器**|
 
 由于采用无脑转发的冒险解决方式，如果某一个字段的寄存器不被用到，那么其 Tuse 设置为 7，避免被 AT 法误判产生阻塞信号。
@@ -190,7 +191,7 @@ i_inst_addr 连接 F_PC；i_inst_rdata[31:0] 连接 F_instr。
 |---|---|---|
 |E_ALU_opA|input[31:0]|ALU 模块的第一个操作数|
 |E_ALU_opB|input[31:0]|ALU 模块的第二个操作数|
-|E_ALU_opC|input[4:0]|ALU 模块的第三个操作数，对应 R 型指令的shamt 字段|
+|E_ALU_opC|input[4:0]|ALU 模块的第三个操作数，对应 R 型指令的 shamt 字段|
 |E_ALUop|input[4:0]|ALU 功能选择控制信号: **00000：A+B； 00001：A-B； 00010：A或B； 00011：A与B； 00100：B逻辑右移C; 00101: B逻辑左移C; 00110: B算数右移C**|
 |E_ALU_result|output[31:0]|32位计算结果|
 
@@ -253,10 +254,11 @@ i_inst_addr 连接 F_PC；i_inst_rdata[31:0] 连接 F_instr。
 |start|input|表示 MDU 即将工作的信号，维持一周期|
 |E_MDU_opA|input[31:0]|MDU 模块第一个操作数|
 |E_MDU_opB|input[31:0]|MDU 模块第二个操作数|
-|E_MDUop|input[3:0]|MDU 功能选择信号：**0000：无操作；0001：符号乘 A*B；0010：无符号乘 A*B；0011：符号除 A/B； 0100：无符号除 A/B；0101：写 HI 寄存器；0110：写 LO 寄存器**|
+|E_MDUop|input[3:0]|MDU 功能选择信号：**0000：无操作；0001：符号乘 A\*B；0010：无符号乘 A\*B；0011：符号除 A/B； 0100：无符号除 A/B；0101：写 HI 寄存器；0110：写 LO 寄存器**|
 |busy|output|MDU 工作信号，高位表示正在使用|
 |HI|output[31:0]|HI 寄存器的数据|
 |LO|output[31:0]|LO 寄存器的数据|
+
 乘除模块只会阻塞需要用到该模块的指令即 MULT、 MULTU、 DIV、 DIVU、MFHI、MFLO、MTHI、MTLO，其他指令可以从 D 级流水至 E 级，这就要求增加 HCU 的功能。
 
 
