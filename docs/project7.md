@@ -701,7 +701,8 @@ P7 实验中该模块已外置。
 |000101|0|0|XXX|XXXX|XXXX|XXXXX|00|000|0000|0001|0101|XXX|0|0|4'd0|4'd0|4'd0|
 
 **sh 指令**：
-  功能描述：memory[Addr]15+16byte..16byte <- GPR[rt]15:0
+
+功能描述：memory[Addr]15+16byte..16byte <- GPR[rt]15:0
 
 |op|GRF_write|DM_write|GRF_A3sel[2:0]|DatatoReg[3:0]|EXTop[3:0]|ALUop[4:0]|DMop[1:0]|BEop[2:0]|MDUop[3:0]|NPCop[3:0]|CMPop[3:0]|ALU_Bsel[2:0]|MDUout_sel|MDU_start|rs_Tuse[3:0]|rt_Tuse[3:0]|Tnew[3:0]|
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
