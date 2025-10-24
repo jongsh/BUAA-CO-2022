@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "BUAA-CO-2022",
   description: "北航计算机学院 2022 年计算机组成原理课程设计",
-  base: '/BUAA-CO-2022/',
+  base: '/BUAA-CO-2022/', 
   head: [
     ['link', { rel: 'icon', href: '/assets/favicon.ico' }]
   ],
