@@ -6,7 +6,7 @@ hero:
   text: ""
   tagline: 北航计算机学院 2022 年计算机组成原理课程设计
   image:
-    src: /assets/logo.png
+    src: '/logo.png'
     alt: Logo
   actions:
     - theme: brand
@@ -27,4 +27,3 @@ features:
     details: 哈哈，真的编不下去了
     icon: 😆
 ---
-

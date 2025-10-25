@@ -6,10 +6,10 @@ export default defineConfig({
   description: "北航计算机学院 2022 年计算机组成原理课程设计",
   base: '/BUAA-CO-2022/', 
   head: [
-    ['link', { rel: 'icon', href: '/assets/favicon.ico' }]
+    ['link', { rel: 'icon', href: '/BUAA-CO-2022/favicon.ico' }]
   ],
   themeConfig: {
-    logo: '/assets/logo.png',
+    logo: '/logo.png',
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
